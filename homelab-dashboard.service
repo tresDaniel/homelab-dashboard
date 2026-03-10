@@ -1,0 +1,24 @@
+[Unit]
+Description=Homelab Dashboard
+After=network.target docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+User=YOUR_USER
+Group=docker
+WorkingDirectory=/opt/homelab-dashboard
+ExecStart=/opt/homelab-dashboard/venv/bin/python main.py
+Restart=on-failure
+RestartSec=5
+Environment=PORT=8000
+Environment=DOCKER_SOCKET=/var/run/docker.sock
+Environment=LLAMA_HOST=localhost
+Environment=LLAMA_PORT=8080
+
+# Segurança mínima
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
