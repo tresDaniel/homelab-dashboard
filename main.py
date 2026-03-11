@@ -25,7 +25,7 @@ import uvicorn
 DOCKER_SOCKET  = os.getenv("DOCKER_SOCKET", "/var/run/docker.sock")
 LLAMA_HOST     = os.getenv("LLAMA_HOST", "localhost")
 LLAMA_PORT     = int(os.getenv("LLAMA_PORT", "8080"))
-ENERGY_EUR_KWH = float(os.getenv("ENERGY_EUR_KWH", "0.22"))  # €/kWh — ajuste para a sua tarifa
+ENERGY_EUR_KWH = float(os.getenv("ENERGY_EUR_KWH", "0.14"))  # €/kWh — ajuste para a tarifa
 
 # ---------------------------------------------------------------------------
 # Helpers: IP local
